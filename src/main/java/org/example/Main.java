@@ -1,17 +1,26 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-        }
+    public static void main(String[] args) {
+
+        StudentGrades student = new StudentGrades();
+
+        student.addGrade(12);
+        student.addGrade(10);
+        student.addGrade(9);
+        student.addGrade(11);
+
+        student.printAll();
+
+        System.out.println("Grade index 2: " + student.getGrade(2));
+
+        student.updateGrade(1, 8);
+        student.printAll();
+
+        student.removeGrade(0);
+        student.printAll();
+
+        System.out.println("AVG: " + student.getAverage());
     }
 }
